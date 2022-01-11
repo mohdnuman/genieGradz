@@ -4,15 +4,17 @@
     <section id="feed-doubts">
         
         <form action="/doubt/create" id="new-doubt-form" method="POST">
-            <textarea name="description"  cols="30" rows="3" placeholder="Type here...."></textarea>
-            <textarea name="user"  cols="30" rows="3" placeholder="user name"></textarea>
+            <textarea name="topic"  cols="30" rows="3" placeholder="Topic...."></textarea>
+            <textarea name="description"  cols="30" rows="3" placeholder="Description..."></textarea>
+            <textarea name="user"  cols="30" rows="3" placeholder="Username...."></textarea>
             
             <input type="submit" value="Create Doubt">
         </form>
         
 
         <div id="doubts-container">
-            <h2>Doubts</h2>
+            <h2>Doubts(<%=doubts.length%> active doubts)</h2>
+
             <ul>
             <% for(doubt of doubts) {%>
                     <%-include('_doubt')-%>

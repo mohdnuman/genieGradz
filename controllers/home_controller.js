@@ -2,7 +2,7 @@ const Doubt=require('../models/doubt');
 
 module.exports.home=async function(req,res){
     try{
-        let doubts=await Doubt.find({})
+        let doubts=await Doubt.find({'accepted':false})
         .sort('-createdAt')
         .populate('user');
         
