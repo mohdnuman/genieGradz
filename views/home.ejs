@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="/css/home.css">
+
+<div id="home-container">
+    <section id="feed-doubts">
+        
+        <form action="/doubt/create" id="new-doubt-form" method="POST">
+            <textarea name="description"  cols="30" rows="3" placeholder="Type here...."></textarea>
+            <textarea name="user"  cols="30" rows="3" placeholder="user name"></textarea>
+            
+            <input type="submit" value="Create Doubt">
+        </form>
+        
+
+        <div id="doubts-container">
+            <h2>Doubts</h2>
+            <ul>
+            <% for(doubt of doubts) {%>
+                    <%-include('_doubt')-%>
+
+                <%}%>
+            </ul>
+        </div>
+    </section>
+
+</div>
