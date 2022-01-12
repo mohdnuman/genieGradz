@@ -7,7 +7,7 @@ module.exports.home=async function(req,res){
         .populate('user');
         
         return res.render('home',{
-            doubts:doubts,
+            doubts:doubts
         });
 
     }catch(err){

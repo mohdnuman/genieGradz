@@ -2,9 +2,10 @@
     
 
     <%=doubt.user%><br>
+    <h3><%=doubt.topic%></h3>
     <%= doubt.description%><br>
     <form action="/doubt/accept/<%=doubt.id%>" method="POST" >
-        <input type="text" name="user">
+        <input type="text" name="user" placeholder="your name..">
         <button type="submit">Accept</button>
     </form>
 

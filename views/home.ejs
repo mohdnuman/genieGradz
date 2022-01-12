@@ -1,8 +1,19 @@
 <link rel="stylesheet" href="/css/home.css">
 
+
 <div id="home-container">
     <section id="feed-doubts">
+        <h3>Student's End</h3>
+
+        <h2>Search if doubt is previously resolved</h2>
+        <form action="doubt/search" method="GET">
+            <textarea name="topic"  cols="30" rows="3" placeholder="Topic...."></textarea>
+            <input type="submit" value="Search Doubt">
+            
+        </form>
         
+
+        <h2>Create a new doubt</h2>
         <form action="/doubt/create" id="new-doubt-form" method="POST">
             <textarea name="topic"  cols="30" rows="3" placeholder="Topic...."></textarea>
             <textarea name="description"  cols="30" rows="3" placeholder="Description..."></textarea>
@@ -11,7 +22,11 @@
             <input type="submit" value="Create Doubt">
         </form>
         
+        <br>
+        <br>
 
+        <hr>
+        <h3>Teacher's End</h3>
         <div id="doubts-container">
             <h2>Doubts(<%=doubts.length%> active doubts)</h2>
 

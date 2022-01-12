@@ -1,0 +1,17 @@
+<%if(searchedDoubts.length==0){%>
+<h1>No Doubts found</h1>
+<%}else{%>
+<ul>
+  <% for(doubt of searchedDoubts) {%>
+  <li>
+    Topic-<%=doubt.topic%>
+    <br />
+
+    Description-<%=doubt.description%>
+  </li>
+  <form action="/doubt/<%=doubt.id%>" method="GET">
+    <button type="submit">show</button>
+  </form>
+  <%}%>
+</ul>
+<%}%>
