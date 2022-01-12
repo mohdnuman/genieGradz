@@ -4,14 +4,15 @@
 <ul>
   <% for(doubt of searchedDoubts) {%>
   <li>
-    Topic-<%=doubt.topic%>
-    <br />
+    <h2>Topic-<%=doubt.topic%></h2>
 
-    Description-<%=doubt.description%>
+    <h1>Description-<%=doubt.description%></h1>
   </li>
   <form action="/doubt/<%=doubt.id%>" method="GET">
     <button type="submit">show</button>
   </form>
   <%}%>
 </ul>
+
 <%}%>
+
