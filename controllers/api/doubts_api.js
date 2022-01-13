@@ -1,5 +1,15 @@
 const Doubt=require("../../models/doubt");
 
+module.exports.index=async function(req,res){
+
+    let doubts=await Doubt.find({'accepted':false})
+    .sort('-createdAt');
+    return res.json(200,{
+        message:"list of doubts",
+        doubts:doubts
+    })
+}
+
 module.exports.create=async function(req,res){
     try{
         let doubt=await Doubt.create({
