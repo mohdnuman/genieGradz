@@ -37,7 +37,7 @@ module.exports.create=async function(req,res){
 
 module.exports.accept=async function(req,res){
     try{
-        console.log('hellllo');
+        // console.log('hellllo');
         let doubt=await Doubt.findById(req.params.id);
         
         doubt.accepted= true;

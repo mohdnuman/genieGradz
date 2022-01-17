@@ -1,4 +1,5 @@
 const Doubt=require('../models/doubt');
+const Chat=require('../models/Chat');
 
 
 module.exports.create=async function(req,res){
@@ -11,6 +12,11 @@ module.exports.create=async function(req,res){
             acceptedBy:'none',
             resolved:false
         });
+
+        let chat=await Chat.create({
+            chatroomId:doubt._id,
+        })
+
         
         return res.redirect('back');
     }catch(err){

@@ -1,25 +1,21 @@
 <%if(doubt.resolved==false){%>
-    <h1><%=doubt.topic%></h1>
-    <h3><%=doubt.description%></h3>
-    <h3>Raised by-<%=doubt.user%></h3>
-    <h3>Accepted by- <%=doubt.acceptedBy%></h3>
-    <form action="/doubt/resolve/<%=doubt.id%>" method="POST">
-    <button>Resolve</button>
-    </form>
+<h1><%=doubt.topic%></h1>
+<h3><%=doubt.description%></h3>
+<h3>Raised by-<%=doubt.user%></h3>
+<h3>Accepted by- <%=doubt.acceptedBy%></h3>
+<form action="/doubt/resolve/<%=doubt.id%>" method="POST">
+  <button>Resolve</button>
+</form>
 
-<%}%> 
-
-<%if(doubt.resolved==true){%>
-    <h1>Doubt is resolved!</h1>
-<%}%>
-
-<%-include('./chatbox.ejs')%>
+<%}%> <%if(doubt.resolved==true){%>
+<h1>Doubt is resolved!</h1>
+<%}%> <%-include('./chatbox.ejs')%>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.3.2/socket.io.js"></script>
-<script src='/js/chat_engine.js'></script>
+
+<script src="/js/chat_engine.js"></script>
 
 <script>
-    // console.log("hello");
-    new ChatEngine('user-chat-box','numan@gmail.com')
-
+  // console.log("hello");
+  new ChatEngine("user-chat-box", "numan@gmail.com", "<%=doubt.id%>");
 </script>
