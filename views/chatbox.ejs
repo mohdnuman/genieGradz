@@ -14,10 +14,15 @@
 			</li>
 
 		</ul>
+		<%if(!doubt.resolved){%>
 		<div id="chat-message-input-container">
 			<input id="chat-message-input" placeholder="Type message here">
 			<button id="send-message">Send</button>
 		</div>
+		<%}else{%>
+			<div id="resolved-input">Doubt Resolved</div>
+		<%}%>
+
 
 	</div>
 	
